@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-
+	"os"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -121,10 +121,11 @@ func supprimer(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
 	http.HandleFunc("/", accueil)
 	http.HandleFunc("/ajouter/", ajouter)
 	http.HandleFunc("/supprimer/", supprimer)
 	http.HandleFunc("/modifier/", modifier)
 	http.HandleFunc("/executerModif/", executerModif)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }

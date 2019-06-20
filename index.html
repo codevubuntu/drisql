@@ -1,0 +1,37 @@
+<h1>{{.Titre}}</h1>
+<table border=1>
+	<tr>
+		<th>Numéro</th><th>Nom</th><th>Pays</th>
+	</tr>
+	{{range .UsersList}}
+	<tr>
+		<td>{{.Id}}</td><td>{{.Name}}</td><td>{{.Country}}</td>
+    <td>
+		<form action="/supprimer/" method="post">
+			<input type="hidden" value={{.Id}} name="idForm"/> 
+			<input type="submit" value="Supprimer" />
+		</form>
+    </td>
+    <td>
+    <form action="/modifier/" method="post" >
+    		<input type="hidden" value={{.Id}} name="idForm"/>
+      <input type="hidden" value={{.Name}} name="nom"/>
+      <input type="hidden" value={{.Country}} name="pays"/>
+      <input type="submit" value="Modifier" />
+    </form>
+    </td>
+	</tr>
+	{{end}}
+	<tr>
+		<td colspan=4>
+			<form action="/ajouter/" method="post">
+				<label for="nom">Nom : </label><input type="text" id="nom" name="nom"/></br>
+				<label for="pays">Pays : </label><input type="text" id="pays" name="pays"/></br>
+				<input type="submit" value="Ajouter"/>
+			</form>
+		</td>
+	</tr>
+</table>
+
+
+

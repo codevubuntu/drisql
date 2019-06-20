@@ -1,0 +1,7 @@
+<h1> Mise à jour </h1>
+<form action="/executerModif/" method="post">
+		<input type="hidden" value={{.Id}} name="idForm"/></br> 
+    <label for="nom">Nom :<input type="text" value={{.Name}} name="nom"/></br> 
+    <label for="pays">Pays :<input type="text" value={{.Country}} name="pays"/></br> 
+		<input type="submit" value="Modifier" />
+</form>

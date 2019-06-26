@@ -1,37 +1,48 @@
-<h1>{{.Titre}}</h1>
-<table border=1>
-	<tr>
-		<th>Numéro</th><th>Nom</th><th>Pays</th>
-	</tr>
-	{{range .UsersList}}
-	<tr>
-		<td>{{.Id}}</td><td>{{.Name}}</td><td>{{.Country}}</td>
-    <td>
-		<form action="/supprimer/" method="post">
-			<input type="hidden" value={{.Id}} name="idForm"/> 
-			<input type="submit" value="Supprimer" />
-		</form>
-    </td>
-    <td>
-    <form action="/modifier/" method="post" >
-    		<input type="hidden" value={{.Id}} name="idForm"/>
-      <input type="hidden" value={{.Name}} name="nom"/>
-      <input type="hidden" value={{.Country}} name="pays"/>
-      <input type="submit" value="Modifier" />
-    </form>
-    </td>
-	</tr>
-	{{end}}
-	<tr>
-		<td colspan=4>
-			<form action="/ajouter/" method="post">
-				<label for="nom">Nom : </label><input type="text" id="nom" name="nom"/></br>
-				<label for="pays">Pays : </label><input type="text" id="pays" name="pays"/></br>
-				<input type="submit" value="Ajouter"/>
-			</form>
-		</td>
-	</tr>
-</table>
-
-
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">	
+			<div class="page-title">
+				<h1>{{.Titre}}</h1>
+			</div>
+			<table class="table">
+				<tr>
+					<th>Numéro</th><th>Nom</th><th>Pays</th>
+				</tr>
+				{{range .UsersList}}
+				<tr>
+					<td>{{.Id}}</td><td>{{.Name}}</td><td>{{.Country}}</td>
+				<td>
+					<form action="/supprimer/" method="post">
+						<input type="hidden" value={{.Id}} name="idForm"/> 
+						<input type="submit" value="Supprimer" />
+					</form>
+				</td>
+				<td>
+				<form action="/modifier/" method="post" >
+				  <input type="hidden" value={{.Id}} name="idForm"/>
+				  <input type="hidden" value={{.Name}} name="nom"/>
+				  <input type="hidden" value={{.Country}} name="pays"/>
+				  <input type="submit" value="Modifier" />
+				</form>
+				</td>
+				</tr>
+				{{end}}
+				<tr>
+					<td colspan=4>
+						<form action="/ajouter/" method="post">
+							<div class="form-group">
+								<label for="nom">Nom : </label><input type="text" class="form-control" id="nom" name="nom"/></br>
+								<label for="pays">Pays : </label><input type="text"  class="form-control" id="pays" name="pays"/></br>
+								<input type="submit" value="Ajouter" class="btn btn-primary pull-right" />
+							</div>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</body>
+	</div>	
+</html>

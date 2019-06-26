@@ -1,7 +1,21 @@
-<h1> Mise à jour </h1>
-<form action="/executerModif/" method="post">
-		<input type="hidden" value={{.Id}} name="idForm"/></br> 
-    <label for="nom">Nom :<input type="text" value={{.Name}} name="nom"/></br> 
-    <label for="pays">Pays :<input type="text" value={{.Country}} name="pays"/></br> 
-		<input type="submit" value="Modifier" />
-</form>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">	
+			<div class="page-title">
+				<h1> Mise à jour </h1>
+			</div>
+			<form action="/executerModif/" method="post">
+				<div class="form-group">
+					<input type="hidden" value={{.Id}} name="idForm"/></br> 
+					<label for="nom">Nom :<input type="text" class="form-control" value={{.Name}} name="nom"/></br> 
+					<label for="pays">Pays :<input type="text" class="form-control" value={{.Country}} name="pays"/></br> 
+					<input type="submit" class="btn btn-primary pull-right"  value="Modifier" />
+				<div class="form-group">
+			</form>
+		</div>
+	</body>
+</html>

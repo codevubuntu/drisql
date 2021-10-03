@@ -122,10 +122,11 @@ func supprimer(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	port := os.Getenv("PORT")
-	http.HandleFunc("/", accueil)
-	http.HandleFunc("/ajouter/", ajouter)
-	http.HandleFunc("/supprimer/", supprimer)
-	http.HandleFunc("/modifier/", modifier)
-	http.HandleFunc("/executerModif/", executerModif)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", accueil)
+	mux.HandleFunc("/ajouter/", ajouter)
+	mux.HandleFunc("/supprimer/", supprimer)
+	mux.HandleFunc("/modifier/", modifier)
+	mux.HandleFunc("/executerModif/", executerModif)
+	log.Fatal(http.ListenAndServe(":"+port, mux))
 }

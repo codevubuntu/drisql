@@ -11,8 +11,8 @@
 			<form action="/executerModif/" method="post">
 				<div class="form-group">
 					<input type="hidden" value={{.Id}} name="idForm"/></br> 
-					<label for="nom">Nom :<input type="text" class="form-control" value={{.Name}} name="nom"/></br> 
-					<label for="pays">Pays :<input type="text" class="form-control" value={{.Country}} name="pays"/></br> 
+					<label for="nom">Nom :<input type="text" class="form-control" value={{.Name}} name="nom" minlength="2" maxlength="10" required /></br> 
+					<label for="pays">Pays :<input type="text" class="form-control" value={{.Country}} name="pays" minlength="2" maxlength="10" required /></br> 
 					<input type="submit" class="btn btn-primary pull-right"  value="Modifier" />
 				<div class="form-group">
 			</form>

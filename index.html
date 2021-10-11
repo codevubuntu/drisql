@@ -35,8 +35,8 @@
 					<td colspan=4>
 						<form action="/ajouter/" method="post">
 							<div class="form-group">
-								<label for="nom">Nom : </label><input type="text" class="form-control" id="nom" name="nom"/></br>
-								<label for="pays">Pays : </label><input type="text"  class="form-control" id="pays" name="pays"/></br>
+								<label for="nom">Nom : </label><input type="text" class="form-control" id="nom" name="nom" minlength="2" maxlength="10" required /></br>
+								<label for="pays">Pays : </label><input type="text"  class="form-control" id="pays" name="pays" minlength="2" maxlength="10" required /></br>
 								<input type="submit" value="Ajouter" class="btn btn-primary pull-right" />
 							</div>
 						</form>
